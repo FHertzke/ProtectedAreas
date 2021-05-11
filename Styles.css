@@ -1,0 +1,289 @@
+body{background-color: #DCDCDC}
+.message{
+    position:absolute;
+    background-color: darkgrey;
+    padding: 1%;
+    -webkit-text-size-adjust: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#map{
+    left:50vw;
+    top:54.5vh;
+    width: 50vw;
+    height: 85vh;
+}
+
+#mapDiv{
+    left:50vw;
+    top:54.5vh;
+    width: 50vw;
+    height: 85vh;
+}
+
+#menuDiv{
+    left:50vw;
+    top:5vh;
+    width: 97vw;
+    height: 5vh;
+}
+
+#filterDiv{
+    left:12vw;
+    top: 32vh;
+    width: 21vw;
+    height: 40vh;
+}
+
+#areaInfoDiv{
+    left: 88vw;
+    top: 32vh;
+    width: 21vw;
+    height: 40vh;
+}
+
+#socialDiv{
+    left:88vw;
+    top: 89vh;
+    width: 21vw;
+    height: 16vh;
+}
+
+#reviewDiv{
+    left:12vw;
+    top: 77vh;
+    width: 21vw;
+    height: 40vh;
+}
+
+#listDiv{
+    left:88vw;
+    top: 66.5vh;
+    width: 21vw;
+    height: 19vh;
+}
+
+#loginDiv{
+    float: right;
+}
+#searchDiv{
+    position: absolute;
+    left: 50vw;
+    -webkit-text-size-adjust: auto;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+.cancel{
+    text-align: center;
+    display: none;
+    position:absolute;
+    left:50vw;
+    top:60vh;
+    background-color: darkgrey;
+    min-height:25vh;
+    width: 50vw;
+    padding: 1%;
+    -webkit-text-size-adjust: auto;
+    transform: translate(-50%, -0%);
+    border-radius: 10px;
+}
+
+button{
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 0.5vw;
+    max-width: 80%;
+}
+
+select {
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 80%;
+    height: 2.5vh;
+    font-size: 65%;
+    max-width: 80%;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 4vw;
+    height: 2vh;
+    font-size: 0.5vw;
+}
+
+input[type=text] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 1vh;
+    width: 7vw;
+}
+
+input[type=password] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 1vh;
+    width: 7vw;
+}
+
+#searchBox{
+    width: 20vw;
+}
+
+#idButton{
+    width: 2vw;
+}
+
+.make{
+    display: none;
+    position:absolute;
+    left:50vw;
+    top:20vh;
+    min-height: 30vh;
+    background-color: darkgrey;
+    width: 20vw;
+    padding: 1%;
+    -webkit-text-size-adjust: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#makeForm{
+    background-color: #DCDCDC;
+    position: fixed;
+    width: 50%;
+    height: 60%;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+#title{
+    font-size: 3vh;
+}
+
+#subtitle{
+    font-size: 2vh;
+}
+
+#subtitle1{
+    font-size: 3vh;
+}
+
+#subtitle2{
+    font-size: 1.5vh;
+}
+
+#loginButton{
+    width: 7vw;
+}
+
+tr td:hover { background: #666; color: #FFF; }
+
+
+
+#timetable-tr {
+    font-family: "Times New Roman";
+    font-size: 1.5vh;
+}
+#timetable-th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.5vh;
+}
+
+#timetable-td{
+    font-family: "Times New Roman";
+    font-size: 1.5vh;
+    text-align: center;
+}
+
+#timetable-td, #timetable-tr, #timetable-table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 0vh;
+}
+
+#button1{
+    width: 10vw;
+}
+
+#button2{
+    width: 5vw;
+    float: right;
+}
+
+#bookFlight{
+    float: right;
+    text-align: left;
+    right: 0vw;
+    width: 10vw;
+    border-right: 20vw;
+}
+
+#container{
+    float: bottom;
+}
+
+#dateDiv{
+    position: absolute;
+    bottom: 2vh;
+}
+
+#refresh{
+    position: absolute;
+    bottom: 1vh;
+}
+
+#flightTimetable{
+    display: block;
+}
+
+#bookings-table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 0vh;
+}
+
+#cancelDiv{
+    background-color: #DCDCDC;
+    position: absolute;
+    width:8vw;
+    top: 11vh;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+#returnDiv{
+    background-color: #DCDCDC;
+    position: absolute;
+    bottom: 2vh;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+#loginDiv{
+    text-align: center;
+}
+
+#closeButtonDiv{
+    position: absolute;
+    right: 1vw;
+    bottom: 1vh;
+}
