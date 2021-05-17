@@ -2,35 +2,30 @@
 <?php
     session_start();
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "protectedareas";
-
-    $server = new mysqli("localhost", "root", "", $dbname);
-
-    if ($server->connect_error) {
-        die("Connection failed: " . $server->connect_error);
-    }
-
     $logged = 0;
-    $userID = null;
 
-    if(isset($_POST["Email"])){
+    $conn = pg_connect("host=localhost dbname=protectedareas user=postgres password=qh4zpmwrbf");
+    if (!$conn) {
+        echo "An error occurred.\n";
+        exit;
+    }
+    if(isset($_POST["Email"])) {
         $user = $_POST["Email"];
-        $pass = $_POST["Password"];
-        $sql = $server->prepare('SELECT * FROM users WHERE Email = ? AND BINARY Password = ?');
-        $sql->bind_param("ss", $user, $pass);
-        $sql->execute();
-        $result = $sql->get_result();
-        $row = $result->fetch_assoc();
-        if($row != null){
-            $logged = 1;
-            $userID = $row['ID'];
+        $pass = md5($_POST["Password"]);
+        $result = pg_prepare($conn, "test", 'SELECT * FROM "public"."users" WHERE LOWER("users"."Email") = LOWER($1) AND "users"."Password" = $2');
+        $result = pg_execute($conn, "test", array("$user", "$pass"));
+        if (!$result) {
+            echo "An error occurred.\n";
+            die("Connection failed: " . pg_result_error($result));
+        } else {
+            $row = pg_fetch_row($result);
+            if($row != null){
+                $logged = 1;
+            }else{
+                echo '<script>alert("incorrect username or password")</script>';
+            }
         }
     }
-
-
 
 ?>
 <html lang="en">
@@ -75,13 +70,14 @@
             echo '<input type="password" placeholder="Password" name="Password" size="25"><br>';
             echo '<input type="submit" name="submit" value="Login" id="loginButton">';
             echo '</form>';
+            echo '<a href="signup.php">Signup</a>';
         }else{
             echo '<h2>Welcome ';
-            echo $row['Name'];
+            echo $row[1];
             echo '</h2>';
             echo '<form name="login", action="index.php", method="post">';
             echo '<input type="hidden" name="Password" value="">';
-            echo '<input type="hidden" name="Email" value="">';
+            echo '<input type="hidden" name="Email" value=null>';
             echo '<input type="submit" name="submit" value="Logout" id="loginButton">';
             echo '</form>';
         }
@@ -97,11 +93,6 @@
 </div>
 <div class="message" id="filterDiv">
     <h3>Filter as:</h3>
-    <h4>
-    <?php
-        echo $userID;
-    ?>
-    </h4>
 </div>
 <div class="message" id="areaInfoDiv">
     <h3>Selected Area Info:</h3>

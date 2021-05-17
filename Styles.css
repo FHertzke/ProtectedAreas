@@ -75,6 +75,14 @@ body{background-color: #DCDCDC}
     text-align: center;
 }
 
+#signupDiv{
+    text-align: center;
+    left:50vw;
+    top: 50vh;
+    width: 50vw;
+    height: 50vh;
+}
+
 .cancel{
     text-align: center;
     display: none;
@@ -143,12 +151,25 @@ input[type=password] {
     width: 7vw;
 }
 
+input[type=date] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 1vh;
+    width: 7vw;
+}
+
 #searchBox{
     width: 20vw;
 }
 
 #idButton{
     width: 2vw;
+}
+
+#warning{
+    color: #9b0000;
 }
 
 .make{
